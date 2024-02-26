@@ -15,7 +15,8 @@
     <name>examenAzizSouissi</name>
     <description>examenAzizSouissi</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>17</java.version>        <!-- Updated Java version to 17 -->
+        <maven.compiler.version>3.11.8</maven.compiler.version>        <!-- Updated Maven Compiler Plugin version -->
     </properties>
     <dependencies>
         <dependency>
@@ -26,7 +27,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
@@ -48,9 +48,9 @@
             <version>2.0.3</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -63,7 +63,16 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>
