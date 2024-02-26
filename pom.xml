@@ -28,7 +28,7 @@
         </dependency>
         <!-- MySQL Connector/J -->
         <dependency>
-            <groupId>com.mysql</groupId>
+            <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.connector.version}</version>
             <scope>runtime</scope>
@@ -54,6 +54,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <!-- MySQL Repository -->
+        <repository>
+            <id>mysql</id>
+            <url>https://repo.mysql.com/maven2/</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
