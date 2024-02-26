@@ -3,31 +3,31 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'checkout scm'
+        checkout scm
       }
     }
 
     stage('Build') {
       steps {
-        sh 'sh \'mvn clean install\''
+        sh \'mvn clean install\'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'sh \'mvn test\''
+        sh \'mvn test\'
       }
     }
 
     stage('Package') {
       steps {
-        sh 'sh \'mvn package\''
+        sh \'mvn package\'
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'echo \'Deployed\''
+        echo \'Deployed\'
       }
     }
 
